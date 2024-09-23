@@ -13,6 +13,11 @@
         state: present
         flags: [ lvm ]
 
+    - name: Install pvs tool
+      ansible.builtin.yum:
+        name: lvm2
+        state: latest
+
     - name: Create volume group on new partition
       lvg:
         vg: vg_kvm
